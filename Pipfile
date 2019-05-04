@@ -4,6 +4,8 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+twine = "==1.13.0"
+wheel = "==0.33.1"
 
 [packages]
 tabulate = "==0.8.3"
