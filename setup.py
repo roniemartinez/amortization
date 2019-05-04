@@ -6,7 +6,7 @@
 # __email__ = "ronmarti18@gmail.com"
 from setuptools import setup
 
-VERSION = '0.1.0-rc1'
+VERSION = '0.1.0-rc2'
 
 setup(
     name='amortization',

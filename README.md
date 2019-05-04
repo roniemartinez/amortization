@@ -30,7 +30,7 @@ amount = calculate_amortization_amount(150_000, 0.1, 36)
 from amortization import amortization_schedule
 
 for number, amount, interest, principal, balance in amortization_schedule(150_000, 0.1, 36):
-    print()
+    print(number, amount, interest, principal, balance)
 ```
 
 ### Amortization Schedule (using tabulate)
@@ -70,6 +70,9 @@ optional arguments:
   -s, --schedule        Generate amortization schedule
 ```
 
+```bash
+amortization -P 150000 -n 36 -r 0.1 -s
+```
 
 ## Dependencies
 
@@ -82,3 +85,4 @@ optional arguments:
 ## References
 
 - [Packaging and distributing projects](https://packaging.python.org/guides/distributing-packages-using-setuptools/)
+- [Using TestPyPI](https://packaging.python.org/guides/using-testpypi/)
