@@ -1,6 +1,36 @@
 # amortization
 
 Python library for calculating amortizations and generating amortization schedules
+<table>
+    <tr>
+        <td>License</td>
+        <td><img src='https://img.shields.io/pypi/l/amortization.svg'></td>
+        <td>Version</td>
+        <td><img src='https://img.shields.io/pypi/v/amortization.svg'></td>
+    </tr>
+    <tr>
+        <td>Travis CI</td>
+        <td><img src='https://travis-ci.org/roniemartinez/amortization.svg?branch=develop'></td>
+        <td>Coverage</td>
+        <td><img src='https://codecov.io/gh/roniemartinez/amortization/branch/develop/graph/badge.svg'></td>
+    </tr>
+    <tr>
+        <td>Wheel</td>
+        <td><img src='https://img.shields.io/pypi/wheel/amortization.svg'></td>
+        <td>Implementation</td>
+        <td><img src='https://img.shields.io/pypi/implementation/amortization.svg'></td>
+    </tr>
+    <tr>
+        <td>Status</td>
+        <td><img src='https://img.shields.io/pypi/status/amortization.svg'></td>
+        <td>Downloads</td>
+        <td><img src='https://img.shields.io/pypi/dm/amortization.svg'></td>
+    </tr>
+    <tr>
+        <td>Supported versions</td>
+        <td><img src='https://img.shields.io/pypi/pyversions/amortization.svg'></td>
+    </tr>
+</table>
 
 ## Demo
 
@@ -80,7 +110,7 @@ amortization -P 150000 -n 36 -r 0.1 -s
 
 ## Author
 
-[Ronie Martinez](ronmarti18@gmail.com)
+[Ronie Martinez](mailto:ronmarti18@gmail.com)
 
 ## References
 

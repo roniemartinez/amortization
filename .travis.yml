@@ -1,0 +1,38 @@
+language: python
+
+cache: pip
+
+python:
+  - 2.7
+  - 3.5
+  - 3.6
+
+matrix:
+  include:
+  - python: 3.7
+    dist: xenial
+    sudo: true
+
+branches:
+  except:
+    - /^[0-9]+\.[0-9]+\.[0-9]+/
+
+install:
+  - pip install pipenv
+  - pipenv install --dev --skip-lock
+
+script:
+  pipenv run pytest --cov=amortization --cov-report=xml -v
+
+after_success:
+  pipenv run codecov
+
+deploy:
+  provider: pypi
+  user: $TEST_PYPI_USER
+  password: $TEST_PYPI_PASS
+  server: https://test.pypi.org/legacy/
+  distributions: "sdist bdist_wheel"
+  on:
+    branch: develop
+    condition: $TRAVIS_PYTHON_VERSION = "3.6"
