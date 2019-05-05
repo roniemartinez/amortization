@@ -51,7 +51,7 @@ pip install amortization
 ```python
 from amortization import calculate_amortization_amount
 
-amount = calculate_amortization_amount(150_000, 0.1, 36)
+amount = calculate_amortization_amount(150000, 0.1, 36)
 ```
 
 ### Amortization Schedule
@@ -59,7 +59,7 @@ amount = calculate_amortization_amount(150_000, 0.1, 36)
 ```python
 from amortization import amortization_schedule
 
-for number, amount, interest, principal, balance in amortization_schedule(150_000, 0.1, 36):
+for number, amount, interest, principal, balance in amortization_schedule(150000, 0.1, 36):
     print(number, amount, interest, principal, balance)
 ```
 
@@ -69,7 +69,7 @@ for number, amount, interest, principal, balance in amortization_schedule(150_00
 from amortization import amortization_schedule
 from tabulate import tabulate
 
-table = (x for x in amortization_schedule(150_000, 0.1, 36))
+table = (x for x in amortization_schedule(150000, 0.1, 36))
 print(
     tabulate(
         table,
