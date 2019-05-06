@@ -5,6 +5,7 @@
 ## 0.2.0
 ### Added
 - Support PyPy
+- AppVeyor integration
 
 ### Changed
 - Convert amortization to package

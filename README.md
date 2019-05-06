@@ -11,14 +11,14 @@ Python library for calculating amortizations and generating amortization schedul
     <tr>
         <td>Travis CI</td>
         <td><img src='https://travis-ci.org/roniemartinez/amortization.svg?branch=staging'></td>
-        <td>Coverage</td>
-        <td><img src='https://codecov.io/gh/roniemartinez/amortization/branch/staging/graph/badge.svg'></td>
+        <td>AppVeyor</td>
+        <td><img src='https://ci.appveyor.com/api/projects/status/qy2j7qutbx1fymuq/branch/staging?svg=true'></td>
     </tr>
     <tr>
+        <td>Coverage</td>
+        <td><img src='https://codecov.io/gh/roniemartinez/amortization/branch/staging/graph/badge.svg'></td>
         <td>Wheel</td>
         <td><img src='https://img.shields.io/pypi/wheel/amortization.svg'></td>
-        <td>Implementation</td>
-        <td><img src='https://img.shields.io/pypi/implementation/amortization.svg'></td>
     </tr>
     <tr>
         <td>Status</td>
@@ -29,6 +29,8 @@ Python library for calculating amortizations and generating amortization schedul
     <tr>
         <td>Supported versions</td>
         <td><img src='https://img.shields.io/pypi/pyversions/amortization.svg'></td>
+        <td>Implementation</td>
+        <td><img src='https://img.shields.io/pypi/implementation/amortization.svg'></td>
     </tr>
 </table>
 
