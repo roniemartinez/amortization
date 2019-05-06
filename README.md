@@ -57,7 +57,7 @@ amount = calculate_amortization_amount(150000, 0.1, 36)
 ### Amortization Schedule
 
 ```python
-from amortization import amortization_schedule
+from amortization.schedule import amortization_schedule
 
 for number, amount, interest, principal, balance in amortization_schedule(150000, 0.1, 36):
     print(number, amount, interest, principal, balance)
@@ -66,7 +66,7 @@ for number, amount, interest, principal, balance in amortization_schedule(150000
 ### Amortization Schedule (using tabulate)
 
 ```python
-from amortization import amortization_schedule
+from amortization.schedule import amortization_schedule
 from tabulate import tabulate
 
 table = (x for x in amortization_schedule(150000, 0.1, 36))
@@ -83,25 +83,27 @@ print(
 ### Command line
 
 ```bash
-amortization -h
-usage: amortization [-h] -P PRINCIPAL -n PERIOD -r INTEREST_RATE [-s]
+amortize -h
+usage: amortize [-h] -P PRINCIPAL -n PERIOD -r INTEREST_RATE [-s]
 
 Python library for calculating amortizations and generating amortization
 schedules
 
 optional arguments:
   -h, --help            show this help message and exit
+  -s, --schedule        Generate amortization schedule
+
+required arguments:
   -P PRINCIPAL, --principal PRINCIPAL
                         Principal amount
   -n PERIOD, --period PERIOD
                         Total number of periods
   -r INTEREST_RATE, --interest-rate INTEREST_RATE
                         Interest rate per period
-  -s, --schedule        Generate amortization schedule
 ```
 
 ```bash
-amortization -P 150000 -n 36 -r 0.1 -s
+amortize -P 150000 -n 36 -r 0.1 -s
 ```
 
 ## Dependencies
