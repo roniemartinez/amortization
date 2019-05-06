@@ -1,0 +1,29 @@
+environment:
+  matrix:
+    - PYTHON: "C:\\Python27"
+    - PYTHON: "C:\\Python27-x64"
+    - PYTHON: "C:\\Python35"
+    - PYTHON: "C:\\Python35-x64"
+    - PYTHON: "C:\\Python36"
+    - PYTHON: "C:\\Python36-x64"
+    - PYTHON: "C:\\Python37"
+    - PYTHON: "C:\\Python37-x64"
+
+branches:
+  except:
+    - /^[0-9]+\.[0-9]+\.[0-9]+/
+
+install:
+  - "%PYTHON%\\Scripts\\pip.exe install pipenv"
+  - "%PYTHON%\\Scripts\\pipenv.exe install --dev --skip-lock"
+
+build: off
+
+cache:
+  - '%LOCALAPPDATA%\pip\Cache'
+
+test_script:
+  - "%PYTHON%\\Scripts\\pipenv.exe run pytest --cov=amortization --cov-report=xml -v"
+
+on_success:
+  - "%PYTHON%\\Scripts\\pipenv.exe run codecov -f coverage.xml"

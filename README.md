@@ -11,14 +11,14 @@ Python library for calculating amortizations and generating amortization schedul
     <tr>
         <td>Travis CI</td>
         <td><img src='https://travis-ci.org/roniemartinez/amortization.svg?branch=master'></td>
-        <td>Coverage</td>
-        <td><img src='https://codecov.io/gh/roniemartinez/amortization/branch/master/graph/badge.svg'></td>
+        <td>AppVeyor</td>
+        <td><img src='https://ci.appveyor.com/api/projects/status/qy2j7qutbx1fymuq/branch/master?svg=true'></td>
     </tr>
     <tr>
+        <td>Coverage</td>
+        <td><img src='https://codecov.io/gh/roniemartinez/amortization/branch/master/graph/badge.svg'></td>
         <td>Wheel</td>
         <td><img src='https://img.shields.io/pypi/wheel/amortization.svg'></td>
-        <td>Implementation</td>
-        <td><img src='https://img.shields.io/pypi/implementation/amortization.svg'></td>
     </tr>
     <tr>
         <td>Status</td>
@@ -29,6 +29,8 @@ Python library for calculating amortizations and generating amortization schedul
     <tr>
         <td>Supported versions</td>
         <td><img src='https://img.shields.io/pypi/pyversions/amortization.svg'></td>
+        <td>Implementation</td>
+        <td><img src='https://img.shields.io/pypi/implementation/amortization.svg'></td>
     </tr>
 </table>
 
@@ -57,7 +59,7 @@ amount = calculate_amortization_amount(150000, 0.1, 36)
 ### Amortization Schedule
 
 ```python
-from amortization import amortization_schedule
+from amortization.schedule import amortization_schedule
 
 for number, amount, interest, principal, balance in amortization_schedule(150000, 0.1, 36):
     print(number, amount, interest, principal, balance)
@@ -66,7 +68,7 @@ for number, amount, interest, principal, balance in amortization_schedule(150000
 ### Amortization Schedule (using tabulate)
 
 ```python
-from amortization import amortization_schedule
+from amortization.schedule import amortization_schedule
 from tabulate import tabulate
 
 table = (x for x in amortization_schedule(150000, 0.1, 36))
@@ -83,25 +85,27 @@ print(
 ### Command line
 
 ```bash
-amortization -h
-usage: amortization [-h] -P PRINCIPAL -n PERIOD -r INTEREST_RATE [-s]
+amortize -h
+usage: amortize [-h] -P PRINCIPAL -n PERIOD -r INTEREST_RATE [-s]
 
 Python library for calculating amortizations and generating amortization
 schedules
 
 optional arguments:
   -h, --help            show this help message and exit
+  -s, --schedule        Generate amortization schedule
+
+required arguments:
   -P PRINCIPAL, --principal PRINCIPAL
                         Principal amount
   -n PERIOD, --period PERIOD
                         Total number of periods
   -r INTEREST_RATE, --interest-rate INTEREST_RATE
                         Interest rate per period
-  -s, --schedule        Generate amortization schedule
 ```
 
 ```bash
-amortization -P 150000 -n 36 -r 0.1 -s
+amortize -P 150000 -n 36 -r 0.1 -s
 ```
 
 ## Dependencies

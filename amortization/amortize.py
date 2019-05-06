@@ -4,39 +4,8 @@
 # __credits__ = ["Ronie Martinez"]
 # __maintainer__ = "Ronie Martinez"
 # __email__ = "ronmarti18@gmail.com"
-
-
-def calculate_amortization_amount(principal, interest_rate, period):
-    """
-    Calculates Amortization Amount per period
-
-    :param principal: Principal amount
-    :param interest_rate: Interest rate per period
-    :param period: Total number of periods
-    :return: Amortization amount per period
-    """
-    x = (1 + interest_rate) ** period
-    return principal * (interest_rate * x) / (x - 1)
-
-
-def amortization_schedule(principal, interest_rate, period):
-    """
-    Generates amortization schedule
-
-    :param principal: Principal amount
-    :param interest_rate: Interest rate per period
-    :param period: Total number of periods
-    :return: Rows containing period, interest, principal, balance, etc
-    """
-    amortization_amount = calculate_amortization_amount(principal, interest_rate, period)
-    number = 1
-    balance = principal
-    while number <= period:
-        interest = balance * interest_rate
-        principal = amortization_amount - interest
-        balance -= principal
-        yield number, amortization_amount, interest, principal, balance if balance > 0 else 0
-        number += 1
+from amortization import calculate_amortization_amount
+from amortization.schedule import amortization_schedule
 
 
 def main():  # pragma: no cover
@@ -68,7 +37,3 @@ def main():  # pragma: no cover
     else:
         amount = calculate_amortization_amount(arguments.principal, arguments.interest_rate, arguments.period)
         print("Amortization amount: {:,.2f}".format(amount))
-
-
-if __name__ == '__main__':   # pragma: no cover
-    main()
