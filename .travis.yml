@@ -32,7 +32,7 @@ deploy:
   provider: pypi
   user: $PYPI_USER
   password: $PYPI_PASS
-  distributions: "sdist bdist_wheel"
+  distributions: "sdist"
   on:
     branch: master
     condition: $TRAVIS_PYTHON_VERSION = "3.6"

@@ -44,6 +44,13 @@ Python library for calculating amortizations and generating amortization schedul
 pip install amortization
 ```
 
+### To build using Cython
+
+```bash
+pip install cython
+pip install amortization
+```
+
 ## Usage
 
 ### Python
@@ -51,7 +58,7 @@ pip install amortization
 #### Amortization Amount
 
 ```python
-from amortization import calculate_amortization_amount
+from amortization.amount import calculate_amortization_amount
 
 amount = calculate_amortization_amount(150000, 0.1, 36)
 ```

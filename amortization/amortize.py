@@ -4,8 +4,8 @@
 # __credits__ = ["Ronie Martinez"]
 # __maintainer__ = "Ronie Martinez"
 # __email__ = "ronmarti18@gmail.com"
-from amortization import calculate_amortization_amount
-from amortization.schedule import amortization_schedule
+from amortization.amount import calculate_amortization_amount  # pragma: no cover
+from amortization.schedule import amortization_schedule  # pragma: no cover
 
 
 def main():  # pragma: no cover

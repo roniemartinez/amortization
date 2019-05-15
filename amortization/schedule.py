@@ -4,7 +4,7 @@
 # __credits__ = ["Ronie Martinez"]
 # __maintainer__ = "Ronie Martinez"
 # __email__ = "ronmarti18@gmail.com"
-from amortization import calculate_amortization_amount
+from amortization.amount import calculate_amortization_amount
 
 
 def amortization_schedule(principal, interest_rate, period):
