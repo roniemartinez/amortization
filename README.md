@@ -10,13 +10,13 @@ Python library for calculating amortizations and generating amortization schedul
     </tr>
     <tr>
         <td>Travis CI</td>
-        <td><img src='https://travis-ci.org/roniemartinez/amortization.svg?branch=staging'></td>
+        <td><img src='https://travis-ci.org/roniemartinez/amortization.svg?branch=develop'></td>
         <td>AppVeyor</td>
-        <td><img src='https://ci.appveyor.com/api/projects/status/qy2j7qutbx1fymuq/branch/staging?svg=true'></td>
+        <td><img src='https://ci.appveyor.com/api/projects/status/qy2j7qutbx1fymuq/branch/develop?svg=true'></td>
     </tr>
     <tr>
         <td>Coverage</td>
-        <td><img src='https://codecov.io/gh/roniemartinez/amortization/branch/staging/graph/badge.svg'></td>
+        <td><img src='https://codecov.io/gh/roniemartinez/amortization/branch/develop/graph/badge.svg'></td>
         <td>Wheel</td>
         <td><img src='https://img.shields.io/pypi/wheel/amortization.svg'></td>
     </tr>
@@ -44,6 +44,13 @@ Python library for calculating amortizations and generating amortization schedul
 pip install amortization
 ```
 
+### To build using Cython
+
+```bash
+pip install cython
+pip install amortization
+```
+
 ## Usage
 
 ### Python
@@ -51,7 +58,7 @@ pip install amortization
 #### Amortization Amount
 
 ```python
-from amortization import calculate_amortization_amount
+from amortization.amount import calculate_amortization_amount
 
 amount = calculate_amortization_amount(150000, 0.1, 36)
 ```
