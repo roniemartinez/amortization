@@ -2,16 +2,36 @@ language: python
 
 cache: pip
 
-os:
-  - linux
-  - osx
-
 python:
   - 3.5
   - 3.6
   - 3.7
   - 3.8
   - pypy3
+
+matrix:
+  include:
+    - name: "Python 3.5 on macOS"
+      os: osx
+      language: shell
+      python: 3.5
+    - name: "Python 3.6 on macOS"
+      os: osx
+      language: shell
+      python: 3.6
+    - name: "Python 3.7 on macOS"
+      os: osx
+      language: shell
+      python: 3.7
+    - name: "Python 3.8 on macOS"
+      os: osx
+      language: shell
+      python: 3.8
+    - name: "PyPy3 on macOS"
+      os: osx
+      language: shell
+      python: pypy3
+
 
 branches:
   except:
@@ -36,4 +56,4 @@ deploy:
   distributions: "sdist"
   on:
     branch: develop
-    condition: $TRAVIS_PYTHON_VERSION = "3.6"
+    condition: $TRAVIS_PYTHON_VERSION = "3.6" AND $TRAVIS_OS_NAME == "linux"
