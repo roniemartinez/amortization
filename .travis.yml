@@ -2,17 +2,16 @@ language: python
 
 cache: pip
 
+os:
+  - linux
+  - osx
+
 python:
-  - 2.7
   - 3.5
   - 3.6
-  - pypy
-
-matrix:
-  include:
-  - python: 3.7
-    dist: xenial
-    sudo: true
+  - 3.7
+  - 3.8
+  - pypy3
 
 branches:
   except:
@@ -23,10 +22,11 @@ install:
   - pipenv install --dev --skip-lock
 
 script:
-  pipenv run pytest --cov=amortization --cov-report=xml -v
+  - pipenv run pytest --cov=amortization --cov-report=xml -v
+  - pipenv run pycodestyle --verbose
 
 after_success:
-  pipenv run codecov
+  - pipenv run codecov
 
 deploy:
   provider: pypi

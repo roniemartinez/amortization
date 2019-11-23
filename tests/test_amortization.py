@@ -9,15 +9,15 @@ from amortization.schedule import amortization_schedule
 
 
 def test_amortization_amount():
-    principal = 150000
+    principal = 150_000
     period = 36
     interest_rate = 0.1
-    amortization = principal * (interest_rate * (1 + interest_rate) ** period)/((1 + interest_rate) ** period - 1)
+    amortization = principal * (interest_rate * (1 + interest_rate) ** period) / ((1 + interest_rate) ** period - 1)
     assert calculate_amortization_amount(principal, interest_rate, period) == amortization
 
 
 def test_amortization_schedule():
-    principal = 150000
+    principal = 150_000
     period = 36
     interest_rate = 0.1
 

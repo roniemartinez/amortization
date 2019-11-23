@@ -5,9 +5,10 @@ verify_ssl = true
 
 [dev-packages]
 codecov = "==2.0.15"
+pycodestyle = "==2.5.0"
 pytest = "==4.4.1"
-pytest-cov = "==2.7.1"
-twine = "==1.13.0"
+pytest-cov = "==2.8.1"
+twine = "==3.0.0"
 
 [packages]
 tabulate = "==0.8.3"
