@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+## 1.0.0 - 2019-12-23
+### Added
+- Linting with pycodestyle
+- Python 3.8 support
+- OSX tests
+
+### Removed
+- Drop Python 2 support
+
 ## 0.3.0 - 2019-05-15
 ### Added
 - Support Cython
