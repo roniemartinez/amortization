@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-## 1.0.0 - 2019-12-23
+## 1.0.0 - 2019-11-23
 ### Added
 - Linting with pycodestyle
 - Python 3.8 support
