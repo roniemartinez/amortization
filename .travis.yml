@@ -11,23 +11,23 @@ python:
 
 matrix:
   include:
-    - name: "Python 3.5 on macOS"
+    - name: "Python: 3.5"
       os: osx
       language: shell
       python: 3.5
-    - name: "Python 3.6 on macOS"
+    - name: "Python: 3.6"
       os: osx
       language: shell
       python: 3.6
-    - name: "Python 3.7 on macOS"
+    - name: "Python: 3.7"
       os: osx
       language: shell
       python: 3.7
-    - name: "Python 3.8 on macOS"
+    - name: "Python: 3.8"
       os: osx
       language: shell
       python: 3.8
-    - name: "PyPy3 on macOS"
+    - name: "Python: pypy3"
       os: osx
       language: shell
       python: pypy3
@@ -38,7 +38,7 @@ branches:
     - /^[0-9]+\.[0-9]+\.[0-9]+/
 
 install:
-  - pip install pipenv
+  - pip3 install pipenv
   - pipenv install --dev --skip-lock
 
 script:
@@ -56,4 +56,4 @@ deploy:
   distributions: "sdist"
   on:
     branch: develop
-    condition: $TRAVIS_PYTHON_VERSION = "3.6" AND $TRAVIS_OS_NAME == "linux"
+    condition: ($TRAVIS_PYTHON_VERSION = "3.6") AND ($TRAVIS_OS_NAME == "linux")
