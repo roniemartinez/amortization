@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 1.0.1 - 2020-03-010
+### Changed
+- Migrate to poetry
+- Update copyright
+
 ## 1.0.0 - 2019-11-23
 ### Added
 - Linting with pycodestyle

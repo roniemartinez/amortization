@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "amortization"
+version = "1.0.1"
+repository = "https://github.com/roniemartinez/amortization"
+description = "Python library for calculating amortizations and generating amortization schedules"
+authors = ["Ronie Martinez <ronmarti18@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Office/Business :: Financial :: Accounting",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.5",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: Implementation :: CPython",
+]
+
+[tool.poetry.scripts]
+amortize = 'amortization.amortize:main'
+
+[tool.poetry.dependencies]
+python = ">=3.5"
+tabulate = "^0.8.6"
+
+[tool.poetry.dev-dependencies]
+codecov = "^2.0.16"
+pytest = "^5.3.5"
+pytest-cov = "^2.8.1"
+pycodestyle = "^2.5.0"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
