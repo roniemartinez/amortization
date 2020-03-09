@@ -50,6 +50,7 @@ after_success:
 before_deploy:
   - poetry config repositories.testpypi https://test.pypi.org/legacy/
   - poetry config http-basic.testpypi $TEST_PYPI_USER $TEST_PYPI_PASS
+  - poetry build
 
 deploy:
   provider: script
