@@ -47,12 +47,14 @@ script:
 after_success:
   - poetry run codecov
 
+before_deploy:
+  - poetry config repositories.testpypi https://test.pypi.org/legacy/
+  - poetry config http-basic.testpypi $TEST_PYPI_USER $TEST_PYPI_PASS
+
 deploy:
-  provider: pypi
-  user: $TEST_PYPI_USER
-  password: $TEST_PYPI_PASS
-  server: https://test.pypi.org/legacy/
-  distributions: "sdist"
+  provider: script
+  script: poetry publish -r testpypi
+  skip_cleanup: true
   on:
     branch: develop
     condition: $TRAVIS_PYTHON_VERSION = "3.6" && $TRAVIS_OS_NAME == "linux"
