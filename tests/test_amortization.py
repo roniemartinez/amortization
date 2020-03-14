@@ -12,8 +12,14 @@ def test_amortization_amount():
     principal = 150000
     period = 36
     interest_rate = 0.1
-    amortization = principal * (interest_rate * (1 + interest_rate) ** period) / ((1 + interest_rate) ** period - 1)
-    assert calculate_amortization_amount(principal, interest_rate, period) == amortization
+    amortization = (
+        principal
+        * (interest_rate * (1 + interest_rate) ** period)
+        / ((1 + interest_rate) ** period - 1)
+    )
+    assert (
+        calculate_amortization_amount(principal, interest_rate, period) == amortization
+    )
 
 
 def test_amortization_schedule():
@@ -21,7 +27,9 @@ def test_amortization_schedule():
     period = 36
     interest_rate = 0.1
 
-    amortization_amount = calculate_amortization_amount(principal, interest_rate, period)
+    amortization_amount = calculate_amortization_amount(
+        principal, interest_rate, period
+    )
 
     number = 1
     balance = principal

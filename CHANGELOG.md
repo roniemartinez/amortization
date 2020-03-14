@@ -2,7 +2,11 @@
 
 ## Unreleased
 
-## 1.0.1 - 2020-03-010
+## 1.0.2 - 2020-03-14
+### Added
+- Include isort, black, flake8, mypy, safety, bandit
+
+## 1.0.1 - 2020-03-10
 ### Changed
 - Migrate to poetry
 - Update copyright
