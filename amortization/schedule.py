@@ -16,7 +16,9 @@ def amortization_schedule(principal, interest_rate, period):
     :param period: Total number of periods
     :return: Rows containing period, interest, principal, balance, etc
     """
-    amortization_amount = calculate_amortization_amount(principal, interest_rate, period)
+    amortization_amount = calculate_amortization_amount(
+        principal, interest_rate, period
+    )
     number = 1
     balance = principal
     while number <= period:

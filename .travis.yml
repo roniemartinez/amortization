@@ -1,6 +1,10 @@
 language: python
 
-cache: pip
+cache:
+  - pip: true
+  - directories:
+      - $HOME/Library/Caches/pypoetry
+      - $HOME/.cache/pypoetry
 
 python:
   - 3.5
@@ -37,12 +41,10 @@ branches:
     - /^[0-9]+\.[0-9]+\.[0-9]+/
 
 install:
-  - pip3 install poetry
-  - poetry install
+  - make install
 
 script:
-  - poetry run pytest --cov=amortization --cov-report=xml -v
-  - poetry run pycodestyle --verbose
+  - make test
 
 after_success:
   - poetry run codecov

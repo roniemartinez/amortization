@@ -44,13 +44,6 @@ Python library for calculating amortizations and generating amortization schedul
 pip install amortization
 ```
 
-### To build using Cython
-
-```bash
-pip install cython
-pip install amortization
-```
-
 ## Usage
 
 ### Python
@@ -117,7 +110,7 @@ amortize -P 150000 -n 36 -r 0.1 -s
 
 ## Dependencies
 
-- [tabulate](https://bitbucket.org/astanin/python-tabulate)
+[tabulate](https://bitbucket.org/astanin/python-tabulate)
 
 ## Author
 
