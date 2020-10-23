@@ -36,7 +36,7 @@ Python library for calculating amortizations and generating amortization schedul
 
 ## Demo
 
-[Amortization Calculator](https://apps.easyaspy.org/amortization-calculator)
+[Amortization Calculator](https://demo.ron.sh/amortization)
 
 ## Install
 
