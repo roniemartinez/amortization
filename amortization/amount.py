@@ -1,11 +1,3 @@
-#!/usr/bin/env python
-# __author__ = "Ronie Martinez"
-# __copyright__ = "Copyright 2019-2020, Ronie Martinez"
-# __credits__ = ["Ronie Martinez"]
-# __maintainer__ = "Ronie Martinez"
-# __email__ = "ronmarti18@gmail.com"
-
-
 def calculate_amortization_amount(principal, interest_rate, period):
     """
     Calculates Amortization Amount per period

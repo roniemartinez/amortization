@@ -6,7 +6,7 @@ optional:
 	poetry run pip install black mypy
 
 style:
-	poetry run isort -rc --atomic .
+	poetry run isort --atomic .
 	poetry run black .
 	poetry run flake8
 

@@ -7,18 +7,14 @@ cache:
       - $HOME/.cache/pypoetry
 
 python:
-  - 3.5
   - 3.6
   - 3.7
   - 3.8
+  - 3.9
   - pypy3
 
 matrix:
   include:
-    - name: "Python: 3.5"
-      os: osx
-      language: shell
-      python: 3.5
     - name: "Python: 3.6"
       os: osx
       language: shell
@@ -31,6 +27,10 @@ matrix:
       os: osx
       language: shell
       python: 3.8
+    - name: "Python: 3.9"
+      os: osx
+      language: shell
+      python: 3.9
     - name: "Python: pypy3"
       os: osx
       language: shell

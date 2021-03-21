@@ -1,15 +1,10 @@
-#!/usr/bin/env python
-# __author__ = "Ronie Martinez"
-# __copyright__ = "Copyright 2019-2020, Ronie Martinez"
-# __credits__ = ["Ronie Martinez"]
-# __maintainer__ = "Ronie Martinez"
-# __email__ = "ronmarti18@gmail.com"
 from amortization.amount import calculate_amortization_amount  # pragma: no cover
 from amortization.schedule import amortization_schedule  # pragma: no cover
 
 
 def main():  # pragma: no cover
     import argparse
+
     from tabulate import tabulate
 
     parser = argparse.ArgumentParser(
