@@ -15,7 +15,7 @@ Python library for calculating amortizations and generating amortization schedul
            <td>License</td>
            <td><img src='https://img.shields.io/pypi/l/amortization.svg' alt="License"></td>
            <td>Version</td>
-           <td><img src='https://img.shields.io/pypi/v/amortization.svg' alt="Version">></td>
+           <td><img src='https://img.shields.io/pypi/v/amortization.svg' alt="Version"></td>
        </tr>
        <tr>
            <td>Travis CI</td>
