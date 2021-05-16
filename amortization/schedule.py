@@ -1,7 +1,11 @@
+from typing import Iterator, Tuple
+
 from amortization.amount import calculate_amortization_amount
 
 
-def amortization_schedule(principal, interest_rate, period):
+def amortization_schedule(
+    principal: float, interest_rate: float, period: int
+) -> Iterator[Tuple[int, float, float, float, float]]:
     """
     Generates amortization schedule
 
@@ -10,9 +14,7 @@ def amortization_schedule(principal, interest_rate, period):
     :param period: Total number of periods
     :return: Rows containing period, interest, principal, balance, etc
     """
-    amortization_amount = calculate_amortization_amount(
-        principal, interest_rate, period
-    )
+    amortization_amount = calculate_amortization_amount(principal, interest_rate, period)
     number = 1
     balance = principal
     while number <= period:

@@ -4,41 +4,36 @@ Python library for calculating amortizations and generating amortization schedul
 <table>
     <tr>
         <td>License</td>
-        <td><img src='https://img.shields.io/pypi/l/amortization.svg'></td>
+        <td><img src='https://img.shields.io/pypi/l/amortization.svg' alt="License"></td>
         <td>Version</td>
-        <td><img src='https://img.shields.io/pypi/v/amortization.svg'></td>
+        <td><img src='https://img.shields.io/pypi/v/amortization.svg' alt="Version"></td>
     </tr>
     <tr>
         <td>Travis CI</td>
-        <td><img src='https://travis-ci.org/roniemartinez/amortization.svg?branch=master'></td>
-        <td>AppVeyor</td>
-        <td><img src='https://ci.appveyor.com/api/projects/status/qy2j7qutbx1fymuq/branch/master?svg=true'></td>
-    </tr>
-    <tr>
+        <td><img src='https://www.travis-ci.com/roniemartinez/amortization.svg?branch=master' alt="Travis CI"></td>
         <td>Coverage</td>
         <td><img src='https://codecov.io/gh/roniemartinez/amortization/branch/master/graph/badge.svg'></td>
-        <td>Wheel</td>
-        <td><img src='https://img.shields.io/pypi/wheel/amortization.svg'></td>
-    </tr>
-    <tr>
-        <td>Status</td>
-        <td><img src='https://img.shields.io/pypi/status/amortization.svg'></td>
-        <td>Downloads</td>
-        <td><img src='https://img.shields.io/pypi/dm/amortization.svg'></td>
     </tr>
     <tr>
         <td>Supported versions</td>
-        <td><img src='https://img.shields.io/pypi/pyversions/amortization.svg'></td>
-        <td>Implementation</td>
-        <td><img src='https://img.shields.io/pypi/implementation/amortization.svg'></td>
+        <td><img src='https://img.shields.io/pypi/pyversions/amortization.svg' alt="Python Versions"></td>
+        <td>Wheel</td>
+        <td><img src='https://img.shields.io/pypi/wheel/amortization.svg' alt="Wheel"></td>
+    </tr>
+    <tr>
+        <td>Status</td>
+        <td><img src='https://img.shields.io/pypi/status/amortization.svg' alt="Status"></td>
+        <td>Downloads</td>
+        <td><img src='https://img.shields.io/pypi/dm/amortization.svg' alt="Downloads"></td>
     </tr>
 </table>
 
-## Demo
+## Support
+If you like `amortization` or if it is useful to you, show your support by buying me a coffee.
 
-[Amortization Calculator](https://demo.ron.sh/amortization)
+<a href="https://www.buymeacoffee.com/roniemartinez" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 
-## Install
+## Installation
 
 ```bash
 pip install amortization
