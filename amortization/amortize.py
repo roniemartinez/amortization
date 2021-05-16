@@ -2,7 +2,7 @@ from amortization.amount import calculate_amortization_amount  # pragma: no cove
 from amortization.schedule import amortization_schedule  # pragma: no cover
 
 
-def main():  # pragma: no cover
+def main() -> None:  # pragma: no cover
     import argparse
 
     from tabulate import tabulate
@@ -47,12 +47,7 @@ def main():  # pragma: no cover
     )
     arguments = parser.parse_args()
     if arguments.schedule:
-        table = (
-            x
-            for x in amortization_schedule(
-                arguments.principal, arguments.interest_rate, arguments.period
-            )
-        )
+        table = (x for x in amortization_schedule(arguments.principal, arguments.interest_rate, arguments.period))
         print(
             tabulate(
                 table,
@@ -62,7 +57,5 @@ def main():  # pragma: no cover
             )
         )
     else:
-        amount = calculate_amortization_amount(
-            arguments.principal, arguments.interest_rate, arguments.period
-        )
+        amount = calculate_amortization_amount(arguments.principal, arguments.interest_rate, arguments.period)
         print("Amortization amount: {:,.2f}".format(amount))
