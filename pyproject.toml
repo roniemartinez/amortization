@@ -40,6 +40,7 @@ flake8 = "^3.7.9"
 black = "^21.5b1"
 mypy = "^0.812"
 dephell = "^0.8.3"
+tomlkit = "0.7.0"  # dephell is broken on versions above 0.7.0
 
 [tool.isort]
 line_length = 120
