@@ -38,7 +38,7 @@ pytest-cov = "^2.12.1"
 isort = "^5.7.0"
 flake8 = "^3.7.9"
 black = "^21.5b2"
-mypy = "^0.812"
+mypy = "^0.901"
 dephell = "^0.8.3"
 tomlkit = "0.7.0"  # dephell is broken on versions above 0.7.0
 
