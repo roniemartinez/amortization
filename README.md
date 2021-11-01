@@ -9,8 +9,8 @@ Python library for calculating amortizations and generating amortization schedul
         <td><img src='https://img.shields.io/pypi/v/amortization.svg' alt="Version"></td>
     </tr>
     <tr>
-        <td>Travis CI</td>
-        <td><img src='https://www.travis-ci.com/roniemartinez/amortization.svg?branch=master' alt="Travis CI"></td>
+        <td>Github Actions</td>
+        <td><img src='https://github.com/roniemartinez/amortization/actions/workflows/python.yml/badge.svg' alt="Github Actions"></td>
         <td>Coverage</td>
         <td><img src='https://codecov.io/gh/roniemartinez/amortization/branch/master/graph/badge.svg'></td>
     </tr>
