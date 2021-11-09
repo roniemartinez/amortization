@@ -7,5 +7,6 @@ def calculate_amortization_amount(principal: float, interest_rate: float, period
     :param period: Total number of period
     :return: Amortization amount per period
     """
-    x = (1 + interest_rate) ** period
-    return principal * (interest_rate * x) / (x - 1)
+    adjusted_interest = interest_rate / 12
+    x = (1 + adjusted_interest) ** period
+    return round(principal * (adjusted_interest * x) / (x - 1), 2)
