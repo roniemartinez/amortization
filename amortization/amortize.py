@@ -1,3 +1,5 @@
+from typing import Any, List
+
 from amortization.amount import calculate_amortization_amount  # pragma: no cover
 from amortization.schedule import amortization_schedule  # pragma: no cover
 
@@ -47,7 +49,14 @@ def main() -> None:  # pragma: no cover
     )
     arguments = parser.parse_args()
     if arguments.schedule:
-        table = (x for x in amortization_schedule(arguments.principal, arguments.interest_rate, arguments.period))
+        total_paid = total_interest = total_principal = 0.0
+        table: List[Any] = []
+        for row in amortization_schedule(arguments.principal, arguments.interest_rate, arguments.period):
+            table.append(row)
+            total_paid += row[1]
+            total_interest += row[2]
+            total_principal += row[3]
+        table.append(("Totals", total_paid, total_interest, total_principal))
         print(
             tabulate(
                 table,
