@@ -10,7 +10,6 @@ try:
 except ImportError:
     from distutils.core import setup
 
-
 import os.path
 
 readme = ''
@@ -24,7 +23,7 @@ if os.path.exists(readme_path):
 setup(
     long_description=readme,
     name='amortization',
-    version='1.0.6',
+    version='1.1.0',
     description='Python library for calculating amortizations and generating amortization schedules',
     python_requires='<4,>=3.6.2',
     project_urls={"repository": "https://github.com/roniemartinez/amortization"},

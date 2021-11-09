@@ -12,7 +12,7 @@ def amortization_schedule(
     :param principal: Principal amount
     :param interest_rate: Interest rate per period
     :param period: Total number of periods
-    :return: Rows containing period, interest, principal, balance, etc
+    :return: Rows containing period, amount, interest, principal, balance, etc
     """
     amortization_amount = calculate_amortization_amount(principal, interest_rate, period)
     adjusted_interest = interest_rate / 12
