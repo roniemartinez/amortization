@@ -1,4 +1,4 @@
-from typing import Any, List
+from typing import Any, List  # pragma: no cover
 
 from amortization.amount import calculate_amortization_amount  # pragma: no cover
 from amortization.schedule import amortization_schedule  # pragma: no cover
