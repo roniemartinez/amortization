@@ -33,7 +33,8 @@ test:
 
 .PHONY: setup
 setup:
-	poetry run dephell deps convert
+	# https://github.com/pypa/setuptools/issues/2993#issuecomment-1003765389
+	SETUPTOOLS_USE_DISTUTILS=stdlib poetry run dephell deps convert
 
 .PHONY: tag
 tag:

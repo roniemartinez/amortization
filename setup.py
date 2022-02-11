@@ -10,6 +10,7 @@ try:
 except ImportError:
     from distutils.core import setup
 
+
 import os.path
 
 readme = ''
@@ -23,7 +24,7 @@ if os.path.exists(readme_path):
 setup(
     long_description=readme,
     name='amortization',
-    version='1.1.0',
+    version='2.0.0-alpha.0',
     description='Python library for calculating amortizations and generating amortization schedules',
     python_requires='<4,>=3.6.2',
     project_urls={"repository": "https://github.com/roniemartinez/amortization"},
@@ -37,5 +38,5 @@ setup(
     package_dir={"": "."},
     package_data={},
     install_requires=['tabulate==0.*,>=0.8.6'],
-    extras_require={"dev": ["autoflake==1.*,>=1.3.1", "black==21.*,>=21.10.0.b0", "codecov==2.*,>=2.1.12", "dephell==0.*,>=0.8.3", "flake8==4.*,>=4.0.1", "isort==5.*,>=5.10.1", "mypy==0.*,>=0.910.0", "pyproject-flake8==0.*,>=0.0.1.a2", "pytest==6.*,>=6.2.5", "pytest-cov==3.*,>=3.0.0", "tomlkit==0.7.0", "types-tabulate==0.*,>=0.8.3"]},
+    extras_require={"dev": ["autoflake==1.*,>=1.3.1", "black==22.*,>=22.1.0", "codecov==2.*,>=2.1.12", "dephell==0.*,>=0.8.3", "flake8==4.*,>=4.0.1", "isort==5.*,>=5.10.1", "mistune<2.0.0", "mypy==0.*,>=0.931.0", "pyproject-flake8==0.*,>=0.0.1.a2", "pytest==7.*,>=7.0.0", "pytest-cov==3.*,>=3.0.0", "tomlkit==0.7.0", "types-tabulate==0.*,>=0.8.5"]},
 )

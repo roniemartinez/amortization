@@ -67,6 +67,15 @@ Amortization Amount
 
    amount = calculate_amortization_amount(150000, 0.1, 36)
 
+Amortization Period
+~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: python
+
+   from amortization.period import calculate_amortization_period
+
+   period = calculate_amortization_period(150000, 0.1, 4840.08)
+
 Amortization Schedule
 ^^^^^^^^^^^^^^^^^^^^^
 
@@ -136,5 +145,5 @@ References
 ----------
 
 
-* `Packaging and distributing projects <https://packaging.python.org/guides/distributing-packages-using-setuptools/>`_
-* `Using TestPyPI <https://packaging.python.org/guides/using-testpypi/>`_
+* `Amortization Calculation Formula <https://www.vertex42.com/ExcelArticles/amortization-calculation.html>`_
+* `Amortization Period Formula <https://math.stackexchange.com/a/3185904>`_
