@@ -89,26 +89,29 @@ print(
 
 ```bash
 amortize -h
-usage: amortize [-h] -P PRINCIPAL -n PERIOD -r INTEREST_RATE [-s]
+usage: amortize [-h] -P PRINCIPAL -r INTEREST_RATE [-s] (-n PERIOD | -a AMOUNT)
 
-Python library for calculating amortizations and generating amortization
-schedules
+Python library for calculating amortizations and generating amortization schedules
 
-optional arguments:
+options:
   -h, --help            show this help message and exit
   -s, --schedule        Generate amortization schedule
+  -n PERIOD, --period PERIOD
+                        Total number of periods
+  -a AMOUNT, --amount AMOUNT
+                        Amortization amount per period
 
 required arguments:
   -P PRINCIPAL, --principal PRINCIPAL
                         Principal amount
-  -n PERIOD, --period PERIOD
-                        Total number of periods
   -r INTEREST_RATE, --interest-rate INTEREST_RATE
                         Interest rate per period
 ```
 
 ```bash
-amortize -P 150000 -n 36 -r 0.1 -s
+amortize -P 150000 -n 36 -r 0.1         # period
+amortize -P 150000 -n 36 -r 0.1 -s      # period
+amortize -P 150000 -a 4840.08 -r 0.1    # amount
 ```
 
 ## Dependencies
