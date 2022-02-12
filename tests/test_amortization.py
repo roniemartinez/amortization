@@ -1,15 +1,6 @@
 import pytest
 
-from amortization.amount import calculate_amortization_amount
 from amortization.schedule import amortization_schedule
-
-
-def test_amortization_amount() -> None:
-    principal = 150000
-    period = 36
-    interest_rate = 0.1
-    amortization = calculate_amortization_amount(principal, interest_rate, period)
-    assert pytest.approx(4840.08, 0.002) == amortization
 
 
 def test_amortization_schedule() -> None:

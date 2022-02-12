@@ -51,6 +51,14 @@ from amortization.amount import calculate_amortization_amount
 amount = calculate_amortization_amount(150000, 0.1, 36)
 ```
 
+#### Amortization Period
+
+```python
+from amortization.period import calculate_amortization_period
+
+period = calculate_amortization_period(150000, 0.1, 4840.08)
+```
+
 ### Amortization Schedule
 
 ```python
@@ -81,26 +89,29 @@ print(
 
 ```bash
 amortize -h
-usage: amortize [-h] -P PRINCIPAL -n PERIOD -r INTEREST_RATE [-s]
+usage: amortize [-h] -P PRINCIPAL -r INTEREST_RATE [-s] (-n PERIOD | -a AMOUNT)
 
-Python library for calculating amortizations and generating amortization
-schedules
+Python library for calculating amortizations and generating amortization schedules
 
-optional arguments:
+options:
   -h, --help            show this help message and exit
   -s, --schedule        Generate amortization schedule
+  -n PERIOD, --period PERIOD
+                        Total number of periods
+  -a AMOUNT, --amount AMOUNT
+                        Amortization amount per period
 
 required arguments:
   -P PRINCIPAL, --principal PRINCIPAL
                         Principal amount
-  -n PERIOD, --period PERIOD
-                        Total number of periods
   -r INTEREST_RATE, --interest-rate INTEREST_RATE
                         Interest rate per period
 ```
 
 ```bash
-amortize -P 150000 -n 36 -r 0.1 -s
+amortize -P 150000 -n 36 -r 0.1         # period
+amortize -P 150000 -n 36 -r 0.1 -s      # period
+amortize -P 150000 -a 4840.08 -r 0.1    # amount
 ```
 
 ## Dependencies
@@ -113,5 +124,5 @@ amortize -P 150000 -n 36 -r 0.1 -s
 
 ## References
 
-- [Packaging and distributing projects](https://packaging.python.org/guides/distributing-packages-using-setuptools/)
-- [Using TestPyPI](https://packaging.python.org/guides/using-testpypi/)
+- [Amortization Calculation Formula](https://www.vertex42.com/ExcelArticles/amortization-calculation.html)
+- [Amortization Period Formula](https://math.stackexchange.com/a/3185904)

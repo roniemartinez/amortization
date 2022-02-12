@@ -2,6 +2,9 @@ def calculate_amortization_amount(principal: float, interest_rate: float, period
     """
     Calculates Amortization Amount per period
 
+    >>> calculate_amortization_amount(150000, 0.1, 36)
+    4840.08
+
     :param principal: Principal amount
     :param interest_rate: Interest rate per period
     :param period: Total number of period

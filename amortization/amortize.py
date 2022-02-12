@@ -1,6 +1,7 @@
 from typing import Any, List  # pragma: no cover
 
 from amortization.amount import calculate_amortization_amount  # pragma: no cover
+from amortization.period import calculate_amortization_period
 from amortization.schedule import amortization_schedule  # pragma: no cover
 
 
@@ -23,14 +24,6 @@ def main() -> None:  # pragma: no cover
         help="Principal amount",
     )
     required.add_argument(
-        "-n",
-        "--period",
-        dest="period",
-        type=int,
-        required=True,
-        help="Total number of periods",
-    )
-    required.add_argument(
         "-r",
         "--interest-rate",
         dest="interest_rate",
@@ -47,8 +40,25 @@ def main() -> None:  # pragma: no cover
         action="store_true",
         help="Generate amortization schedule",
     )
+    mutually_exclusive = parser.add_mutually_exclusive_group(required=True)
+    mutually_exclusive.add_argument(
+        "-n",
+        "--period",
+        dest="period",
+        type=int,
+        help="Total number of periods",
+    )
+    mutually_exclusive.add_argument(
+        "-a",
+        "--amount",
+        dest="amount",
+        type=float,
+        help="Amortization amount per period",
+    )
     arguments = parser.parse_args()
     if arguments.schedule:
+        if arguments.period is None:
+            parser.error("-s/--schedule requires -n/--period")
         total_paid = total_interest = total_principal = 0.0
         table: List[Any] = []
         for row in amortization_schedule(arguments.principal, arguments.interest_rate, arguments.period):
@@ -65,6 +75,9 @@ def main() -> None:  # pragma: no cover
                 numalign="right",
             )
         )
+    elif arguments.amount:
+        period = calculate_amortization_period(arguments.principal, arguments.interest_rate, arguments.amount)
+        print("Amortization period: {}".format(period))
     else:
         amount = calculate_amortization_amount(arguments.principal, arguments.interest_rate, arguments.period)
         print("Amortization amount: {:,.2f}".format(amount))
