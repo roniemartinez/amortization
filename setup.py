@@ -24,7 +24,7 @@ if os.path.exists(readme_path):
 setup(
     long_description=readme,
     name='amortization',
-    version='2.0.1-alpha.1',
+    version='2.0.1',
     description='Python library for calculating amortizations and generating amortization schedules',
     python_requires='<4,>=3.6.2',
     project_urls={"repository": "https://github.com/roniemartinez/amortization"},

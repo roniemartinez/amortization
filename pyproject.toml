@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "amortization"
-version = "2.0.1-alpha.1"
+version = "2.0.1"
 repository = "https://github.com/roniemartinez/amortization"
 description = "Python library for calculating amortizations and generating amortization schedules"
 authors = ["Ronie Martinez <ronmarti18@gmail.com>"]
