@@ -38,7 +38,7 @@ Python library for calculating amortizations and generating amortization schedul
 Support
 -------
 
-If you like ``amortization`` or if it is useful to you, show your support by buying me a coffee.
+If you like ``amortization`` or if it is useful to you, show your support by sponsoring my projects.
 
 
 .. image:: https://img.shields.io/github/sponsors/roniemartinez?label=github%20sponsors&logo=github%20sponsors&style=for-the-badge
