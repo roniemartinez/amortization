@@ -1,6 +1,3 @@
-.. role:: raw-html-m2r(raw)
-   :format: html
-
 
 amortization
 ============
@@ -13,27 +10,27 @@ Python library for calculating amortizations and generating amortization schedul
    <table>
        <tr>
            <td>License</td>
-           <td><img src='https://img.shields.io/pypi/l/amortization.svg' alt="License"></td>
+           <td><img src='https://img.shields.io/pypi/l/amortization.svg?style=for-the-badge' alt="License"></td>
            <td>Version</td>
-           <td><img src='https://img.shields.io/pypi/v/amortization.svg' alt="Version"></td>
+           <td><img src='https://img.shields.io/pypi/v/amortization.svg?logo=pypi&style=for-the-badge' alt="Version"></td>
        </tr>
        <tr>
            <td>Github Actions</td>
-           <td><img src='https://github.com/roniemartinez/amortization/actions/workflows/python.yml/badge.svg' alt="Github Actions"></td>
+           <td><img src='https://img.shields.io/github/workflow/status/roniemartinez/amortization/Python?label=actions&logo=github%20actions&style=for-the-badge' alt="Github Actions"></td>
            <td>Coverage</td>
-           <td><img src='https://codecov.io/gh/roniemartinez/amortization/branch/master/graph/badge.svg'></td>
+           <td><img src='https://img.shields.io/codecov/c/github/roniemartinez/amortization/branch?label=codecov&logo=codecov&style=for-the-badge' alt="CodeCov"></td>
        </tr>
        <tr>
            <td>Supported versions</td>
-           <td><img src='https://img.shields.io/pypi/pyversions/amortization.svg' alt="Python Versions"></td>
+           <td><img src='https://img.shields.io/pypi/pyversions/amortization.svg?logo=python&style=for-the-badge' alt="Python Versions"></td>
            <td>Wheel</td>
-           <td><img src='https://img.shields.io/pypi/wheel/amortization.svg' alt="Wheel"></td>
+           <td><img src='https://img.shields.io/pypi/wheel/amortization.svg?style=for-the-badge' alt="Wheel"></td>
        </tr>
        <tr>
            <td>Status</td>
-           <td><img src='https://img.shields.io/pypi/status/amortization.svg' alt="Status"></td>
+           <td><img src='https://img.shields.io/pypi/status/amortization.svg?style=for-the-badge' alt="Status"></td>
            <td>Downloads</td>
-           <td><img src='https://img.shields.io/pypi/dm/amortization.svg' alt="Downloads"></td>
+           <td><img src='https://img.shields.io/pypi/dm/amortization.svg?style=for-the-badge' alt="Downloads"></td>
        </tr>
    </table>
 
@@ -43,7 +40,11 @@ Support
 
 If you like ``amortization`` or if it is useful to you, show your support by buying me a coffee.
 
-:raw-html-m2r:`<a href="https://www.buymeacoffee.com/roniemartinez" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>`
+
+.. image:: https://img.shields.io/github/sponsors/roniemartinez?label=github%20sponsors&logo=github%20sponsors&style=for-the-badge
+   :target: https://github.com/sponsors/roniemartinez
+   :alt: Github Sponsors
+
 
 Installation
 ------------
@@ -131,7 +132,7 @@ Command line
 .. code-block:: bash
 
    amortize -P 150000 -n 36 -r 0.1         # period
-   amortize -P 150000 -n 36 -r 0.1 -s      # period
+   amortize -P 150000 -n 36 -r 0.1 -s      # schedule
    amortize -P 150000 -a 4840.08 -r 0.1    # amount
 
 Dependencies
