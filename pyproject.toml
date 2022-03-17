@@ -46,7 +46,7 @@ pyproject-flake8 = "^0.0.1-alpha.2"
 pytest = "^7.0.0"
 pytest-cov = "^3.0.0"
 tomlkit = "0.7.0"  # dephell is broken on versions above 0.7.0
-types-tabulate = "^0.8.5"
+types-tabulate = "^0.8.6"
 
 [tool.isort]
 line_length = 120
