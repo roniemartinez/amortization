@@ -1,9 +1,4 @@
 
-amortization
-============
-
-Python library for calculating amortizations and generating amortization schedules
-
 
 .. raw:: html
 
@@ -35,16 +30,10 @@ Python library for calculating amortizations and generating amortization schedul
    </table>
 
 
-Support
--------
+amortization
+============
 
-If you like ``amortization`` or if it is useful to you, show your support by sponsoring my projects.
-
-
-.. image:: https://img.shields.io/github/sponsors/roniemartinez?label=github%20sponsors&logo=github%20sponsors&style=for-the-badge
-   :target: https://github.com/sponsors/roniemartinez
-   :alt: Github Sponsors
-
+Python library for calculating amortizations and generating amortization schedules
 
 Installation
 ------------

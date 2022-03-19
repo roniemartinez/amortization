@@ -1,6 +1,3 @@
-# amortization
-
-Python library for calculating amortizations and generating amortization schedules
 <table>
     <tr>
         <td>License</td>
@@ -28,10 +25,9 @@ Python library for calculating amortizations and generating amortization schedul
     </tr>
 </table>
 
-## Support
-If you like `amortization` or if it is useful to you, show your support by sponsoring my projects.
+# amortization
 
-[![Github Sponsors](https://img.shields.io/github/sponsors/roniemartinez?label=github%20sponsors&logo=github%20sponsors&style=for-the-badge)](https://github.com/sponsors/roniemartinez)
+Python library for calculating amortizations and generating amortization schedules
 
 ## Installation
 

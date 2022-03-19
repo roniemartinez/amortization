@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "amortization"
-version = "2.0.1"
+version = "2.0.2"
 repository = "https://github.com/roniemartinez/amortization"
 description = "Python library for calculating amortizations and generating amortization schedules"
 authors = ["Ronie Martinez <ronmarti18@gmail.com>"]
@@ -16,7 +16,6 @@ classifiers = [
     "Topic :: Scientific/Engineering :: Mathematics",
     "Topic :: Software Development :: Libraries :: Python Modules",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.6",
     "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
@@ -31,13 +30,12 @@ classifiers = [
 amortize = "amortization.amortize:main"
 
 [tool.poetry.dependencies]
-python = ">=3.6.2, <4"
+python = "^3.7"
 tabulate = "^0.8.6"
 
 [tool.poetry.dev-dependencies]
 autoflake = "^1.3.1"
 black = "^22.1"
-codecov = "^2.1.12"
 dephell = "^0.8.3"
 isort = "^5.10.1"
 mistune = "<2.0.0"  # not compatible with m2r
@@ -85,12 +83,20 @@ setup.py,
 """
 
 [tool.pytest.ini_options]
-addopts = "--doctest-modules --cov=amortization --cov-report term-missing --cov-report=xml --cov-report=html -vv"
+addopts = """
+    --doctest-modules \
+    --cov=amortization \
+    --cov-report=term-missing \
+    --cov-report=xml \
+    --cov-report=html \
+    -vv \
+    -x \
+"""
 
 [tool.dephell.main]
 from = { format = "poetry", path = "pyproject.toml" }
 to = { format = "setuppy", path = "setup.py" }
 
 [build-system]
-requires = ["poetry>=0.12"]
-build-backend = "poetry.masonry.api"
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
