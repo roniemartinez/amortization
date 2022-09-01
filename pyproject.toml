@@ -35,7 +35,7 @@ tabulate = "^0.8.6"
 
 [tool.poetry.dev-dependencies]
 autoflake = "^1.5.2"
-black = "^22.6"
+black = "^22.8"
 dephell = "^0.8.3"
 isort = "^5.10.1"
 mistune = "<2.0.0"  # not compatible with m2r
