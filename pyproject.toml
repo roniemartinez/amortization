@@ -31,7 +31,7 @@ amortize = "amortization.amortize:main"
 
 [tool.poetry.dependencies]
 python = "^3.7"
-tabulate = "^0.8.6"
+tabulate = ">=0.8.6,<0.10.0"
 
 [tool.poetry.dev-dependencies]
 autoflake = "^1.7.4"
