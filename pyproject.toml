@@ -35,7 +35,7 @@ tabulate = ">=0.8.6,<0.10.0"
 
 [tool.poetry.dev-dependencies]
 autoflake = "^1.7.6"
-black = "^22.10"
+black = "^22.12"
 isort = "^5.10.1"
 mypy = "^0.982"
 pyproject-flake8 = "^5.0.4"
