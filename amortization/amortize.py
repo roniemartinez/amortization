@@ -12,7 +12,7 @@ def main() -> None:  # pragma: no cover
     from tabulate import tabulate
 
     class ConvertFrequency(argparse.Action):
-        def __call__(self, parser: Any, namespace: Any, values: str, option_string: Any = None):
+        def __call__(self, parser: Any, namespace: Any, values: Any, option_string: Any = None) -> None:
             setattr(namespace, self.dest, PaymentFrequency[values.upper()])
 
     parser = argparse.ArgumentParser(
