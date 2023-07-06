@@ -85,13 +85,15 @@ print(
 
 ```bash
 amortize -h
-usage: amortize [-h] -P PRINCIPAL -r INTEREST_RATE [-s] (-n PERIOD | -a AMOUNT)
+usage: amortize [-h] -P PRINCIPAL -r INTEREST_RATE [-s] [-f {daily,biweekly,weekly,semimonthly,monthly,quarterly,semiyearly,yearly}] (-n PERIOD | -a AMOUNT)
 
 Python library for calculating amortizations and generating amortization schedules
 
 options:
   -h, --help            show this help message and exit
   -s, --schedule        Generate amortization schedule
+  -f {daily,biweekly,weekly,semimonthly,monthly,quarterly,semiyearly,yearly}, --frequency {daily,biweekly,weekly,semimonthly,monthly,quarterly,semiyearly,yearly}
+                        Payment frequency
   -n PERIOD, --period PERIOD
                         Total number of periods
   -a AMOUNT, --amount AMOUNT
@@ -101,13 +103,14 @@ required arguments:
   -P PRINCIPAL, --principal PRINCIPAL
                         Principal amount
   -r INTEREST_RATE, --interest-rate INTEREST_RATE
-                        Interest rate per period
+                        Interest rate per year
 ```
 
 ```bash
-amortize -P 150000 -n 36 -r 0.1         # period
-amortize -P 150000 -n 36 -r 0.1 -s      # schedule
-amortize -P 150000 -a 4840.08 -r 0.1    # amount
+amortize -P 150000 -n 36 -r 0.1             # period
+amortize -P 150000 -n 36 -r 0.1 -s          # schedule
+amortize -P 150000 -a 4840.08 -r 0.1        # amount
+amortize -P 150000 -n 36 -r 0.1 -f weekly   # period (specify payment frequency)
 ```
 
 ```bash

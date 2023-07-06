@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "amortization"
-version = "2.2.1"
+version = "2.3.0"
 repository = "https://github.com/roniemartinez/amortization"
 description = "Python library for calculating amortizations and generating amortization schedules"
 authors = ["Ronie Martinez <ronmarti18@gmail.com>"]
@@ -16,7 +16,6 @@ classifiers = [
     "Topic :: Scientific/Engineering :: Mathematics",
     "Topic :: Software Development :: Libraries :: Python Modules",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
@@ -31,7 +30,7 @@ classifiers = [
 amortize = "amortization.amortize:main"
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.8"
 tabulate = "^0.9.0"
 
 [tool.poetry.dev-dependencies]

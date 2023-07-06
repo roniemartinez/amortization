@@ -1,6 +1,7 @@
 from typing import Any, List  # pragma: no cover
 
 from amortization.amount import calculate_amortization_amount  # pragma: no cover
+from amortization.enums import PaymentFrequency  # pragma: no cover
 from amortization.period import calculate_amortization_period
 from amortization.schedule import amortization_schedule  # pragma: no cover
 
@@ -9,6 +10,10 @@ def main() -> None:  # pragma: no cover
     import argparse
 
     from tabulate import tabulate
+
+    class ConvertFrequency(argparse.Action):
+        def __call__(self, parser: Any, namespace: Any, values: str, option_string: Any = None):
+            setattr(namespace, self.dest, PaymentFrequency[values.upper()])
 
     parser = argparse.ArgumentParser(
         description="Python library for calculating amortizations and generating amortization schedules"
@@ -29,7 +34,7 @@ def main() -> None:  # pragma: no cover
         dest="interest_rate",
         type=float,
         required=True,
-        help="Interest rate per period",
+        help="Interest rate per year",
     )
     # optional parameters
     parser.add_argument(
@@ -39,6 +44,16 @@ def main() -> None:  # pragma: no cover
         default=False,
         action="store_true",
         help="Generate amortization schedule",
+    )
+    parser.add_argument(
+        "-f",
+        "--frequency",
+        dest="frequency",
+        default=PaymentFrequency.MONTHLY,
+        type=str,
+        action=ConvertFrequency,
+        choices=("daily", "biweekly", "weekly", "semimonthly", "monthly", "quarterly", "semiyearly", "yearly"),
+        help="Payment frequency",
     )
     mutually_exclusive = parser.add_mutually_exclusive_group(required=True)
     mutually_exclusive.add_argument(
@@ -61,7 +76,9 @@ def main() -> None:  # pragma: no cover
             parser.error("-s/--schedule requires -n/--period")
         total_paid = total_interest = total_principal = 0.0
         table: List[Any] = []
-        for row in amortization_schedule(arguments.principal, arguments.interest_rate, arguments.period):
+        for row in amortization_schedule(
+            arguments.principal, arguments.interest_rate, arguments.period, arguments.frequency
+        ):
             table.append(row)
             total_paid += row[1]
             total_interest += row[2]
@@ -76,8 +93,12 @@ def main() -> None:  # pragma: no cover
             )
         )
     elif arguments.amount:
-        period = calculate_amortization_period(arguments.principal, arguments.interest_rate, arguments.amount)
+        period = calculate_amortization_period(
+            arguments.principal, arguments.interest_rate, arguments.amount, arguments.frequency
+        )
         print("Amortization period: {}".format(period))
     else:
-        amount = calculate_amortization_amount(arguments.principal, arguments.interest_rate, arguments.period)
+        amount = calculate_amortization_amount(
+            arguments.principal, arguments.interest_rate, arguments.period, arguments.frequency
+        )
         print("Amortization amount: {:,.2f}".format(amount))
