@@ -3,7 +3,7 @@ from enum import Enum
 
 class PaymentFrequency(Enum):
     DAILY = 365
-    BIWEEKLY = 104
+    BIWEEKLY = 26
     WEEKLY = 52
     SEMIMONTHLY = 24
     MONTHLY = 12
