@@ -1,14 +1,17 @@
-[tool.poetry]
+[project]
 name = "amortization"
-version = "2.4.0"
+version = "2.5.0"
 repository = "https://github.com/roniemartinez/amortization"
 description = "Python library for calculating amortizations and generating amortization schedules"
-authors = ["Ronie Martinez <ronmarti18@gmail.com>"]
-license = "MIT"
+authors = [
+    { name = "Ronie Martinez", email = "ronmarti18@gmail.com" }
+]
+license = { text = "MIT" }
 readme = "README.md"
 keywords = [
     "amortization"
 ]
+requires-python = ">=3.9"
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "License :: OSI Approved :: MIT License",
@@ -16,11 +19,15 @@ classifiers = [
     "Topic :: Scientific/Engineering :: Mathematics",
     "Topic :: Software Development :: Libraries :: Python Modules",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
     "Programming Language :: Python :: Implementation :: CPython",
+]
+dependencies = [
+    "tabulate (>=0.9.0,<0.10.0)"
 ]
 
 [tool.poetry.urls]
@@ -29,18 +36,14 @@ classifiers = [
 [tool.poetry.scripts]
 amortize = "amortization.amortize:main"
 
-[tool.poetry.dependencies]
-python = "^3.8"
-tabulate = "^0.9.0"
-
-[tool.poetry.dev-dependencies]
-autoflake = "^1.7.8"
-black = "^24.8"
-isort = "^5.13.2"
+[tool.poetry.group.dev.dependencies]
+autoflake = "^2.3.1"
+black = "^25.1.0"
+isort = "^6.0.1"
 mypy = "^1.14"
-pyproject-flake8 = "^5.0.4"
+pyproject-flake8 = "^7.0.0"
 pytest = "^8.3.5"
-pytest-cov = "^5.0.0"
+pytest-cov = "^6.0.0"
 types-tabulate = "^0.9.0"
 
 [tool.isort]
@@ -54,7 +57,7 @@ atomic = true
 
 [tool.black]
 line-length = 120
-target-version = ['py39']
+target-version = ['py313']
 include = '\.pyi?$'
 extend-exclude = """
 # A regex preceded with ^/ will apply only to files and directories
@@ -85,5 +88,5 @@ addopts = """
 """
 
 [build-system]
-requires = ["poetry-core"]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
