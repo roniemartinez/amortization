@@ -45,6 +45,14 @@ def main() -> None:  # pragma: no cover
         action="store_true",
         help="Generate amortization schedule",
     )
+    required.add_argument(
+        "-e",
+        "--extra-payment",
+        dest="extra_payment",
+        type=float,
+        default=0.0,
+        help="Extra payment per period",
+    )
     parser.add_argument(
         "-f",
         "--frequency",

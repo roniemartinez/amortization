@@ -5,7 +5,7 @@ from amortization.enums import PaymentFrequency
 
 
 def amortization_schedule(
-    principal: float, interest_rate: float, period: int, payment_frequency: PaymentFrequency = PaymentFrequency.MONTHLY
+    principal: float, interest_rate: float, period: int, extra_payment: float = 0.0, payment_frequency: PaymentFrequency = PaymentFrequency.MONTHLY
 ) -> Iterator[Tuple[int, float, float, float, float]]:
     """
     Generates amortization schedule
@@ -13,6 +13,7 @@ def amortization_schedule(
     :param principal: Principal amount
     :param interest_rate: Interest rate per year
     :param period: Total number of periods
+    :param extra_payment: Extra principal paid each period
     :param payment_frequency: Payment frequency per year
     :return: Rows containing period, amount, interest, principal, balance, etc
     """
@@ -20,10 +21,16 @@ def amortization_schedule(
     adjusted_interest = interest_rate / payment_frequency.value
     balance = principal
     for number in range(1, period + 1):
+        if not balance:
+            return
+
         interest = round(balance * adjusted_interest, 2)
-        if number < period:
-            principal = amortization_amount - interest
+        payment = amortization_amount + extra_payment
+
+        if payment < balance:
+            principal = payment - interest
             balance -= principal
         else:
-            principal, amortization_amount, balance = balance, balance + interest, 0
-        yield number, amortization_amount, interest, principal, balance
+            principal, payment, balance = balance, balance + interest, 0
+
+        yield number, payment, interest, principal, balance
