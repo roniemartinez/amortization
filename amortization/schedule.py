@@ -20,9 +20,9 @@ def amortization_schedule(
     amortization_amount = calculate_amortization_amount(principal, interest_rate, period, extra_payment, payment_frequency)
     adjusted_interest = interest_rate / payment_frequency.value
     balance = principal
-    for number in range(1, period + 1):
-        if not balance:
-            return
+    number = 0
+    while balance:
+        number += 1
 
         interest = round(balance * adjusted_interest, 2)
         payment = amortization_amount
