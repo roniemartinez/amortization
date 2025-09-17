@@ -17,7 +17,7 @@ def amortization_schedule(
     :param payment_frequency: Payment frequency per year
     :return: Rows containing period, amount, interest, principal, balance, etc
     """
-    amortization_amount = calculate_amortization_amount(principal, interest_rate, period, payment_frequency)
+    amortization_amount = calculate_amortization_amount(principal, interest_rate, period, extra_payment, payment_frequency)
     adjusted_interest = interest_rate / payment_frequency.value
     balance = principal
     for number in range(1, period + 1):
@@ -25,7 +25,7 @@ def amortization_schedule(
             return
 
         interest = round(balance * adjusted_interest, 2)
-        payment = amortization_amount + extra_payment
+        payment = amortization_amount
 
         if payment < balance:
             principal = payment - interest
