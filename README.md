@@ -33,6 +33,7 @@ Python library for calculating amortizations and generating amortization schedul
 
 ```bash
 pip install amortization
+pip install amortization[cli]
 ```
 
 ## Usage
@@ -55,7 +56,7 @@ from amortization.period import calculate_amortization_period
 period = calculate_amortization_period(150000, 0.1, 4840.08)
 ```
 
-### Amortization Schedule
+#### Amortization Schedule
 
 ```python
 from amortization.schedule import amortization_schedule
@@ -64,7 +65,7 @@ for number, amount, interest, principal, balance in amortization_schedule(150000
     print(number, amount, interest, principal, balance)
 ```
 
-### Amortization Schedule (using tabulate)
+#### Amortization Schedule (using tabulate)
 
 ```python
 from amortization.schedule import amortization_schedule
@@ -85,24 +86,22 @@ print(
 
 ```bash
 amortize -h
-usage: amortize [-h] -P PRINCIPAL -r INTEREST_RATE [-s] [-f {daily,biweekly,weekly,semimonthly,monthly,quarterly,semiyearly,yearly}] (-n PERIOD | -a AMOUNT)
+usage: amortize [-h] -P PRINCIPAL -r INTEREST_RATE [-s] [-f {daily,weekly,biweekly,semimonthly,monthly,quarterly,semiyearly,yearly}] (-n PERIOD | -a AMOUNT)
 
 Python library for calculating amortizations and generating amortization schedules
 
 options:
   -h, --help            show this help message and exit
   -s, --schedule        Generate amortization schedule
-  -f {daily,biweekly,weekly,semimonthly,monthly,quarterly,semiyearly,yearly}, --frequency {daily,biweekly,weekly,semimonthly,monthly,quarterly,semiyearly,yearly}
+  -f, --frequency {daily,weekly,biweekly,semimonthly,monthly,quarterly,semiyearly,yearly}
                         Payment frequency
-  -n PERIOD, --period PERIOD
-                        Total number of periods
-  -a AMOUNT, --amount AMOUNT
-                        Amortization amount per period
+  -n, --period PERIOD   Total number of periods
+  -a, --amount AMOUNT   Amortization amount per period
 
 required arguments:
-  -P PRINCIPAL, --principal PRINCIPAL
+  -P, --principal PRINCIPAL
                         Principal amount
-  -r INTEREST_RATE, --interest-rate INTEREST_RATE
+  -r, --interest-rate INTEREST_RATE
                         Interest rate per year
 ```
 
@@ -158,7 +157,7 @@ Totals    174,242.79   24,242.79   150,000.00
 
 ## Dependencies
 
-[tabulate](https://bitbucket.org/astanin/python-tabulate)
+[tabulate](https://github.com/astanin/python-tabulate) (optional, required for CLI)
 
 ## Author
 
