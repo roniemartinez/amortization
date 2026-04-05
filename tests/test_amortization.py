@@ -1,13 +1,73 @@
 import pytest
 
-from amortization.schedule import amortization_schedule
+from amortization.amount import calculate_amortization_amount
+from amortization.enums import PaymentFrequency
+from amortization.period import calculate_amortization_period
+from amortization.schedule import ScheduleRow, amortization_schedule
+
+
+@pytest.mark.parametrize(
+    "principal, interest_rate, period, frequency, expected",
+    [
+        (150000, 0.1, 36, PaymentFrequency.MONTHLY, 4840.08),
+        (150000, 0.1, 36, PaymentFrequency.SEMIMONTHLY, 4495.63),
+        (150000, 0.0, 36, PaymentFrequency.MONTHLY, 4166.67),
+        (10000, 0.1, 1, PaymentFrequency.MONTHLY, 10083.33),
+    ],
+)
+def test_calculate_amortization_amount(
+    principal: float, interest_rate: float, period: int, frequency: PaymentFrequency, expected: float
+) -> None:
+    assert calculate_amortization_amount(principal, interest_rate, period, frequency) == expected
+
+
+@pytest.mark.parametrize(
+    "principal, interest_rate, period, match",
+    [
+        (0, 0.1, 36, "principal must be positive"),
+        (-1000, 0.1, 36, "principal must be positive"),
+        (150000, -0.1, 36, "interest_rate must be non-negative"),
+        (150000, 0.1, 0, "period must be positive"),
+    ],
+)
+def test_calculate_amortization_amount_validation(
+    principal: float, interest_rate: float, period: int, match: str
+) -> None:
+    with pytest.raises(ValueError, match=match):
+        calculate_amortization_amount(principal, interest_rate, period)
+
+
+@pytest.mark.parametrize(
+    "principal, interest_rate, amount, frequency, expected",
+    [
+        (150000, 0.1, 4840.08, PaymentFrequency.MONTHLY, 36),
+        (150000, 0.1, 4500, PaymentFrequency.WEEKLY, 34),
+        (150000, 0.0, 5000, PaymentFrequency.MONTHLY, 30),
+    ],
+)
+def test_calculate_amortization_period(
+    principal: float, interest_rate: float, amount: float, frequency: PaymentFrequency, expected: int
+) -> None:
+    assert calculate_amortization_period(principal, interest_rate, amount, frequency) == expected
+
+
+@pytest.mark.parametrize(
+    "principal, interest_rate, amount, match",
+    [
+        (0, 0.1, 5000, "principal must be positive"),
+        (150000, -0.1, 5000, "interest_rate must be non-negative"),
+        (150000, 0.1, 0, "amount must be positive"),
+        (150000, 0.1, 1000, "amount must exceed the first period's interest"),
+    ],
+)
+def test_calculate_amortization_period_validation(
+    principal: float, interest_rate: float, amount: float, match: str
+) -> None:
+    with pytest.raises(ValueError, match=match):
+        calculate_amortization_period(principal, interest_rate, amount)
 
 
 def test_amortization_schedule() -> None:
-    principal: float = 150000
-    period = 36
-    interest_rate = 0.1
-
     expected = (
         (1, 4840.08, 1250.00, 3590.08, 146409.92),
         (2, 4840.08, 1220.08, 3620.00, 142789.92),
@@ -47,6 +107,17 @@ def test_amortization_schedule() -> None:
         (36, 4839.99, 40.00, 4799.99, 0.00),
     )
 
-    result = amortization_schedule(principal, interest_rate, period)
-    for e, r in zip(expected, result):
-        assert pytest.approx(e) == r
+    result = list(amortization_schedule(150000, 0.1, 36))
+    for r, e in zip(result, expected, strict=True):
+        assert r == pytest.approx(e)
+
+
+def test_schedule_returns_named_tuples() -> None:
+    row = next(amortization_schedule(10000, 0.1, 3))
+    assert isinstance(row, ScheduleRow)
+    assert row.number == 1
+
+
+def test_schedule_final_balance_is_zero() -> None:
+    rows = list(amortization_schedule(200000, 0.05, 60))
+    assert rows[-1].balance == pytest.approx(0.0)

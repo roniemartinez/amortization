@@ -1,4 +1,4 @@
-from typing import Any, List  # pragma: no cover
+from typing import Any  # pragma: no cover
 
 from amortization.amount import calculate_amortization_amount  # pragma: no cover
 from amortization.enums import PaymentFrequency  # pragma: no cover
@@ -52,7 +52,7 @@ def main() -> None:  # pragma: no cover
         default=PaymentFrequency.MONTHLY,
         type=str,
         action=ConvertFrequency,
-        choices=("daily", "biweekly", "weekly", "semimonthly", "monthly", "quarterly", "semiyearly", "yearly"),
+        choices=("daily", "weekly", "biweekly", "semimonthly", "monthly", "quarterly", "semiyearly", "yearly"),
         help="Payment frequency",
     )
     mutually_exclusive = parser.add_mutually_exclusive_group(required=True)
@@ -75,14 +75,14 @@ def main() -> None:  # pragma: no cover
         if arguments.period is None:
             parser.error("-s/--schedule requires -n/--period")
         total_paid = total_interest = total_principal = 0.0
-        table: List[Any] = []
+        table: list[Any] = []
         for row in amortization_schedule(
             arguments.principal, arguments.interest_rate, arguments.period, arguments.frequency
         ):
             table.append(row)
-            total_paid += row[1]
-            total_interest += row[2]
-            total_principal += row[3]
+            total_paid += row.amount
+            total_interest += row.interest
+            total_principal += row.principal
         table.append(("Totals", total_paid, total_interest, total_principal))
         print(
             tabulate(
