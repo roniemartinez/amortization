@@ -37,4 +37,4 @@ def calculate_amortization_period(
     min_amount = adjusted_interest * principal
     if amount <= min_amount:
         raise ValueError(f"amount must exceed the first period's interest of {min_amount:.2f}")
-    return round(log(amount / (amount - adjusted_interest * principal), 1 + adjusted_interest))
+    return round(log(amount / (amount - min_amount), 1 + adjusted_interest))
