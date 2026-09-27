@@ -12,6 +12,8 @@ from amortization.schedule import ScheduleRow, amortization_schedule
         (150000, 0.1, 36, PaymentFrequency.MONTHLY, 4840.08),
         (150000, 0.1, 36, PaymentFrequency.SEMIMONTHLY, 4495.63),
         (150000, 0.0, 36, PaymentFrequency.MONTHLY, 4166.67),
+        (100000, 1e-15, 360, PaymentFrequency.MONTHLY, 277.78),
+        (100000, 1e-12, 360, PaymentFrequency.MONTHLY, 277.78),
         (10000, 0.1, 1, PaymentFrequency.MONTHLY, 10083.33),
     ],
 )
