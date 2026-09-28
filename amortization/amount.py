@@ -1,3 +1,5 @@
+from math import expm1, log1p
+
 from amortization.enums import PaymentFrequency
 
 
@@ -32,5 +34,4 @@ def calculate_amortization_amount(
     if interest_rate == 0:
         return round(principal / period, 2)
     adjusted_interest = interest_rate / payment_frequency.value
-    x = (1 + adjusted_interest) ** period
-    return round(principal * (adjusted_interest * x) / (x - 1), 2)
+    return round(principal * adjusted_interest / -expm1(-period * log1p(adjusted_interest)), 2)
