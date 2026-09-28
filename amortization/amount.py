@@ -34,5 +34,4 @@ def calculate_amortization_amount(
     if interest_rate == 0:
         return round(principal / period, 2)
     adjusted_interest = interest_rate / payment_frequency.value
-    discount = -expm1(-period * log1p(adjusted_interest))
-    return round(principal * adjusted_interest / discount, 2)
+    return round(principal * adjusted_interest / -expm1(-period * log1p(adjusted_interest)), 2)
